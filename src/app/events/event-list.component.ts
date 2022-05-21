@@ -3,6 +3,18 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'event-list',
   templateUrl: './event-list.component.html',
+  styles: [
+    `
+      .padding-left {
+        margin-left: 10px;
+      }
+      .well div {
+        padding: 20px;
+        color: white;
+        background: red;
+      }
+    `,
+  ],
 })
 export class EventListComponent {
   public event1 = {
