@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'events-app-root',
-  template: `<event-list></event-list>
-    <img src="../assets/images/basic-shield.png" /> `,
+  template: `
+  <nav-component></nav-component>
+  <event-list></event-list>
+   `,
 })
 export class EventAppComponent {
   title = 'ng-fundamentals';
