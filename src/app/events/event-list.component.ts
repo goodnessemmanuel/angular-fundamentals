@@ -5,5 +5,16 @@ import { Component } from '@angular/core';
   templateUrl: './event-list.component.html',
 })
 export class EventListComponent {
-  
+  public event1 = {
+    id: 1,
+    name: 'Angular Connect',
+    price: 569,
+    date: '10/09/1988',
+    imageURL: '/assets/images/basic-shield.png',
+    location: {
+      address: 'Kingston Layout',
+      city: 'Las Vegas',
+      country: 'USA',
+    },
+  };
 }
