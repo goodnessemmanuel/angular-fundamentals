@@ -17,4 +17,8 @@ export class EventListComponent {
       country: 'USA',
     },
   };
+
+  public childEventThumbnailClickListener(data: any){
+    console.log("...Received: ", data, " in EventListComponent");
+  }
 }

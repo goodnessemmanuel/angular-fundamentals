@@ -2,4 +2,6 @@
   <h1>Up Coming Angular Events</h1>
 </div>
 <hr />
-<event-thumbnail [event]="event1"></event-thumbnail>
+<event-thumbnail 
+[event]="event1" 
+(thumbnailClickEmitter)="childEventThumbnailClickListener($event)"></event-thumbnail>
