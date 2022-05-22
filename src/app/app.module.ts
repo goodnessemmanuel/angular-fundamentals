@@ -4,15 +4,17 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from 'src/routes';
 import { ToasterService } from './common/toaster.service';
 import { Error404Component } from './errors/404.component';
-
 import { EventAppComponent } from './event-app.component';
-import { EventRouteActivatorService } from './events/even-route-activator.service';
-import { CreateEventComponent } from './events/event-create.component';
-import { EventDetailComponent } from './events/event-detail.component';
-import { EventListComponent } from './events/event-list.component';
-import { EventThumbnailComponent } from './events/event-thumbnail.component';
 import { NavComponent } from './nav/nav.component';
-import { EventService } from './shared/event.service';
+
+import {
+  EventRouteActivatorService,
+  CreateEventComponent,
+  EventDetailComponent,
+  EventListComponent,
+  EventThumbnailComponent,
+  EventService,
+} from './events/index';
 
 @NgModule({
   declarations: [
@@ -38,9 +40,11 @@ import { EventService } from './shared/event.service';
 })
 export class AppModule {}
 
-function confirmAction(component: CreateEventComponent){
-  if(component.isDirty){
-    return window.confirm('You have not save this event, do you really want to cancel?')
+function confirmAction(component: CreateEventComponent) {
+  if (component.isDirty) {
+    return window.confirm(
+      'You have not save this event, do you really want to cancel?'
+    );
   }
-  return true
+  return true;
 }

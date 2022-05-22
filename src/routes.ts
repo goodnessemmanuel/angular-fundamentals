@@ -5,10 +5,10 @@
  */
 import { Routes } from '@angular/router';
 import { Error404Component } from './app/errors/404.component';
-import { EventRouteActivatorService } from './app/events/even-route-activator.service';
+import { EventRouteActivatorService } from './app/events/event-details/event-route-activator.service';
 import { CreateEventComponent } from './app/events/event-create.component';
 
-import { EventDetailComponent } from './app/events/event-detail.component';
+import { EventDetailComponent } from './app/events/event-details/event-detail.component';
 import { EventListComponent } from './app/events/event-list.component';
 
 /**
@@ -35,6 +35,7 @@ export const appRoutes: Routes = [
 
   {
     path: 'user',
-    loadChildren: () => import('./app/user/user.module').then((m) => m.UserMondule) //dynamic import since recent angular version. loadchildren nolonger takes a string but a function, 
-  }, 
+    loadChildren: () =>
+      import('./app/user/user.module').then((m) => m.UserMondule), //dynamic import since recent angular version. loadchildren nolonger takes a string but a function,
+  },
 ];
