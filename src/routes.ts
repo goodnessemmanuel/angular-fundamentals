@@ -32,4 +32,9 @@ export const appRoutes: Routes = [
   },
   { path: '404', component: Error404Component },
   { path: '', redirectTo: '/events', pathMatch: 'full' },
+
+  {
+    path: 'user',
+    loadChildren: () => import('./app/user/user.module').then((m) => m.UserMondule) //dynamic import since recent angular version. loadchildren nolonger takes a string but a function, 
+  }, 
 ];
