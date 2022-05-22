@@ -9,6 +9,7 @@ import { Component } from "@angular/core";
         @media (max-width: 1200px){
             #searchForm{display: none}
         }
+        li > a.active{ color: #f97924 }
     `]
 })
 export class NavComponent{
