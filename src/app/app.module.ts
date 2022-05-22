@@ -5,6 +5,7 @@ import { appRoutes } from 'src/routes';
 import { ToasterService } from './common/toaster.service';
 
 import { EventAppComponent } from './event-app.component';
+import { CreateEventComponent } from './events/event-create.component';
 import { EventDetailComponent } from './events/event-detail.component';
 import { EventListComponent } from './events/event-list.component';
 import { EventThumbnailComponent } from './events/event-thumbnail.component';
@@ -17,7 +18,8 @@ import { EventService } from './shared/event.service';
     EventListComponent,
     EventThumbnailComponent,
     NavComponent,
-    EventDetailComponent
+    EventDetailComponent,
+    CreateEventComponent
   ],
   imports: [
     BrowserModule,

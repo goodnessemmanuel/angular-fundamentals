@@ -5,6 +5,8 @@
 <!-- *ngFor is a structural directive -->
 <div class="row">
     <div class="col-md-6" *ngFor="let event of events">
+        <!-- handleThumbnailClick doesnot show toaster because of the 
+            routerLink attribute of the event-thumbnail child item -->
      <event-thumbnail (click) = "handleThumbnailClick(event.name)" [event]="event"></event-thumbnail>
     </div>
 </div>
