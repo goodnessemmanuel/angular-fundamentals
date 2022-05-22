@@ -13,6 +13,16 @@ export class EventService{
         return EVENTS;
     }
 
+    /**
+     * return a particular event given the id
+     * @param id number
+     */
+    getEvent(id: number): any {
+        const found = EVENTS.find(event => event.id == id);
+        console.log("param id is: ", id, "item found is: ", found);
+        return found;
+    }
+
 }
 
 const EVENTS = [
