@@ -19,9 +19,17 @@ import { EventListComponent } from './app/events/event-list.component';
  * - redirect if the URL starts with the specified path
  */
 export const appRoutes: Routes = [
-  { path: 'events/new', component: CreateEventComponent },
+  {
+    path: 'events/new',
+    component: CreateEventComponent,
+    canDeactivate: ['canDeactivateCreateEvent'],
+  },
   { path: 'events', component: EventListComponent },
-  { path: 'events/:id', component: EventDetailComponent, canActivate: [EventRouteActivatorService] },
+  {
+    path: 'events/:id',
+    component: EventDetailComponent,
+    canActivate: [EventRouteActivatorService],
+  },
   { path: '404', component: Error404Component },
   { path: '', redirectTo: '/events', pathMatch: 'full' },
 ];

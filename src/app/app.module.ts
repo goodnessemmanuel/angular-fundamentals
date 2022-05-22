@@ -22,17 +22,25 @@ import { EventService } from './shared/event.service';
     NavComponent,
     EventDetailComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes)
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
   providers: [
-    EventService, 
+    EventService,
     ToasterService,
-    EventRouteActivatorService
+    EventRouteActivatorService,
+    {
+      provide: 'canDeactivateCreateEvent',
+      useValue: confirmAction,
+    },
   ],
-  bootstrap: [EventAppComponent]
+  bootstrap: [EventAppComponent],
 })
-export class AppModule { }
+export class AppModule {}
+
+function confirmAction(component: CreateEventComponent){
+  if(component.isDirty){
+    return window.confirm('You have not save this event, do you really want to cancel?')
+  }
+  return true
+}
