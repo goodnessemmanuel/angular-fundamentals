@@ -10,6 +10,7 @@ import { CreateEventComponent } from './app/events/event-create.component';
 
 import { EventDetailComponent } from './app/events/event-details/event-detail.component';
 import { EventListComponent } from './app/events/event-list.component';
+import { EventListResolver } from './app/events';
 
 /**
  * All route config to the entire events app is done here
@@ -24,7 +25,18 @@ export const appRoutes: Routes = [
     component: CreateEventComponent,
     canDeactivate: ['canDeactivateCreateEvent'],
   },
-  { path: 'events', component: EventListComponent },
+  {
+    path: 'events',
+    component: EventListComponent,
+    /**
+     * intercept this route, 
+     * get the entire data first 
+     * to prevent page from laoding without real time data, 
+     * map the data to events key as object 
+     * and store it in the route before loading
+     */
+    resolve: { events: EventListResolver }, 
+  },
   {
     path: 'events/:id',
     component: EventDetailComponent,

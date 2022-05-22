@@ -14,6 +14,7 @@ import {
   EventListComponent,
   EventThumbnailComponent,
   EventService,
+  EventListResolver,
 } from './events/index';
 
 @NgModule({
@@ -35,6 +36,7 @@ import {
       provide: 'canDeactivateCreateEvent',
       useValue: confirmAction,
     },
+    EventListResolver
   ],
   bootstrap: [EventAppComponent],
 })
