@@ -18,7 +18,9 @@ export class EventService{
      * @param id number
      */
     getEvent(id: number): any {
-      return EVENTS.find(event => event.id === id);
+        const found = EVENTS.find(event => event.id == id);
+        console.log("param id is: ", id, "item found is: ", found);
+        return found;
     }
 
 }

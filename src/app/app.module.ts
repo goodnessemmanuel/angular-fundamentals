@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from 'src/routes';
 import { ToasterService } from './common/toaster.service';
 
 import { EventAppComponent } from './event-app.component';
@@ -18,7 +20,8 @@ import { EventService } from './shared/event.service';
     EventDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [EventService, ToasterService],
   bootstrap: [EventAppComponent]
